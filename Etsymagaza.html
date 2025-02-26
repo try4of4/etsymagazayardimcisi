@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etsy Mağaza Asistanı</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sol Sidebar: Mağaza Seçimi -->
+        <div class="sidebar">
+            <h2>Mağazalarım</h2>
+            <ul id="store-list">
+                <!-- Mağazalar JS ile buraya eklenecek -->
+            </ul>
+            <button id="add-store" onclick="addStore()">+ Yeni Mağaza</button>
+        </div>
+
+        <!-- Ana İçerik -->
+        <div class="main-content">
+            <h1>Etsy Mağaza Asistanı</h1>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="title">Başlık (140 karakter)</label>
+                    <textarea id="title" rows="2" maxlength="140" oninput="countTitle()"></textarea>
+                    <span class="counter">Kalan: <span id="title-count">140</span></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Etiketler (maks. 13)</label>
+                    <input type="text" id="tags" placeholder="Etiketleri virgülle ayırın" oninput="countTags()">
+                    <span class="counter">Kullanılan: <span id="tag-count">0</span>/13</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Açıklama</label>
+                    <textarea id="description" rows="6"></textarea>
+                </div>
+
+                <button onclick="clearForm()">Temizle</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
